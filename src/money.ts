@@ -1,5 +1,9 @@
 class Money {
     public amount: number;
+
+    isEqual(money: Money): boolean {
+        return this.amount === money.amount && this.constructor === money.constructor;
+    }
 }
 
 export class Dollar extends Money {
@@ -8,25 +12,17 @@ export class Dollar extends Money {
         this.amount = amount;
     }
 
-    times(multiplier: number): void {
-        this.amount *= multiplier;
-    }
-
-    isEqual(money: Money): boolean {
-       return this.amount === money.amount;
+    times(multiplier: number): Money {
+       return new Dollar(this.amount * multiplier);
     }
 }
-export class Franc {
-    private amount: number;
+export class Franc extends Money {
     constructor(amount: number) {
+        super();
         this.amount = amount;
     }
 
-    times(multiplier: number): void {
-        this.amount *= multiplier;
-    }
-
-    isEqual(franc: Franc): boolean {
-        return this.amount === franc.amount;
+    times(multiplier: number): Money {
+       return new Franc(this.amount * multiplier);
     }
 }
