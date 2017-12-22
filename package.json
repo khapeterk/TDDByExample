@@ -5,7 +5,8 @@
   "scripts": {
     "test": "karma start",
     "tsc": "tsc",
-    "tsc:w": "tsc -w"
+    "tsc:w": "tsc -w",
+    "tsctest": "tsc && karma start"
   },
   "dependencies": {
     "systemjs": "^0.19.27"

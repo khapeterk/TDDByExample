@@ -1,4 +1,4 @@
-import {Dollar, Franc} from '../src/money';
+import {Dollar, Franc} from "../src/money";
 
 describe("Dollar Tests", () => {
    it("should test multiplication", () => {
